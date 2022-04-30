@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pass-generator
+  labels:
+    app: pass-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pass-generator
+  template:
+    metadata:
+      labels:
+        app: pass-generator
+    spec:
+      containers:
+      - name: pass-generator
+        image: pass_generator
+        ports:
+        - name: http-server
+          containerPort: 5000
