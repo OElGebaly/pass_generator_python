@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: pass-generator
-        image: pass_generator
+        image: docker.io/library/pass_generator:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - name: http-server
           containerPort: 5000

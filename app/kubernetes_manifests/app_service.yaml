@@ -5,7 +5,7 @@ metadata:
   labels:
     app: pass-generator
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: pass-generator
   ports:
