@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pass-generator
+  annotations:
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "pass-generator.io"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/passwords"
+        backend:
+          service:
+            name: pass-generator
+            port:
+              number: 5000
